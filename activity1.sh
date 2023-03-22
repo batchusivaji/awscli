@@ -7,7 +7,7 @@ if [[ -z $tag_name ]]; then
 fi
 # if user does not pass tag_value as 2 argument DEV is default
 if [[ -z $tag_value ]]; then
-   tag_value="DEV"
+tag_value="QAT"
 fi
 
 instanceIds=$(aws ec2 describe-instances --filters "Name=tag:${tag_name},Values=${tag_value}" "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].InstanceId" --output text)
